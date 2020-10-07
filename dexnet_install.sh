@@ -7,10 +7,10 @@ VERSION=$1 # cpu or gpu
 case "${VERSION}"
 in
 cpu)
-	pip install tensorflow==1.15.0
-	;;
+    pip3 install --no-cache-dir tensorflow==1.15.0
+    ;;
 gpu)
-  pip install tensorflow-gpu==1.13.1
+    pip3 install --no-cache-dir tensorflow-gpu==1.13.1
 	;;
 *)
 	echo "Usage: $0 {cpu|gpu}"
@@ -18,7 +18,9 @@ gpu)
 esac
 
 # install apt deps
-sudo apt install cmake libvtk6-dev python-vtk6 python-sip python-qt4 libosmesa6-dev meshlab libhdf5-dev
+sudo apt update
+sudo apt install -y cmake libvtk6-dev python-vtk6 python-sip python-qt4 libosmesa6-dev meshlab libhdf5-dev
+sudo rm -rf /var/lib/apt/lists/*
 
 # install pip deps
 python3 -m pip install -r dexnet_requirements.txt

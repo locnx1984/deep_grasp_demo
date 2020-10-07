@@ -36,3 +36,8 @@ make -j4
 sudo make install
 
 sudo ldconfig
+
+# remove .zips, sources and build caches
+cd ../..
+rm opencv-3.4.0.zip opencv_contrib-3.4.0.zip
+rm -rf opencv-3.4.0 opencv_contrib-3.4.0

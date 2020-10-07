@@ -8,3 +8,8 @@ mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make -j4
 sudo make install
+
+# remove .zips, sources and build caches
+cd ../..
+rm pcl-pcl-1.11.0.zip
+rm -rf pcl-pcl-1.11.0
